@@ -1,0 +1,25 @@
+A very simple message system that currently listens on port 9999 for
+incoming requests. When a connection is established, the program
+sends back a packet with the string of characters given on the command
+line.
+
+***NOTE*** The code here is not necessarily secure to some kind of
+manipulation. It's really just hacked together for my own practice
+with network programming in C.
+
+Usage: ./simpleMessage [message]
+
+This will start a socket listening on port 9999. To receive the message
+on a client, telnet works just fine. Telnetting to the hosting server
+on port 9999 will result in <message> being sent to the telnet client
+and the connection being closed immediately after.
+
+Example: open up a terminal, type ./simpleMessage hello
+        -open up another terminal, type telnet localhost 9999
+        -you will receive hello on the telnet terminal before
+           the connection is closed
+
+TODO: I want to make this a full fledged messaging program where two
+people can communicate over an unencrypted connection. Doing the same
+thing over an encrypted connection is probably not in the pipeline, but
+who knows.
